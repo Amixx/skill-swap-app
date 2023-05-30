@@ -52,4 +52,8 @@
     <string name="view_offers">View offers</string>
     <string name="cta_offers">In the meantime, why not check out our available offers?</string>
     <string name="offer">Offer</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="your_password">Your Password</string>
 </resources>

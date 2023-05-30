@@ -1,4 +1,4 @@
-package com.example.skillswap
+package com.iliepins.skillswap
 
 import android.os.Bundle
 import android.text.Editable
@@ -12,12 +12,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import com.example.skillswap.databinding.ActivityMainBinding
+import com.iliepins.skillswap.databinding.ActivitySignUpBinding
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import android.content.Intent
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class SignUpActivity : AppCompatActivity() {
+    private lateinit var binding: ActivitySignUpBinding
 
     private lateinit var nameEditText: EditText
     private lateinit var emailEditText: EditText
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         joinAsMentorButton = findViewById(R.id.joinAsMentorButton)
         joinAsMenteeButton = findViewById(R.id.joinAsMenteeButton)
         viewOffersButton = findViewById(R.id.viewOffersButton)
+        val openSignInButton: Button = findViewById(R.id.openSignInButton)
 
         joinAsMentorButton.alpha = 0.5f
         joinAsMenteeButton.alpha = 0.5f
@@ -68,11 +69,16 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+        openSignInButton.setOnClickListener {
+            val intent = Intent(this@SignUpActivity, SignInActivity::class.java)
+            startActivity(intent)
+        }
+
         nameEditText.addTextChangedListener(inputWatcher)
         emailEditText.addTextChangedListener(inputWatcher)
 
         viewOffersButton.setOnClickListener {
-            val intent = Intent(this@MainActivity, OffersActivity::class.java)
+            val intent = Intent(this@SignUpActivity, OffersActivity::class.java)
             intent.putExtra("registrationType", if (isMentor) "mentor" else "mentee")
             startActivity(intent)
         }

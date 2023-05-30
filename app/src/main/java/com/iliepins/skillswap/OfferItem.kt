@@ -1,4 +1,4 @@
-package com.example.skillswap
+package com.iliepins.skillswap
 
 import android.content.Context
 import android.view.LayoutInflater

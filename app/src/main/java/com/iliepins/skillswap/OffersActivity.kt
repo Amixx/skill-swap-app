@@ -1,4 +1,4 @@
-package com.example.skillswap
+package com.iliepins.skillswap
 
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
